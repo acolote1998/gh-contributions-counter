@@ -1,4 +1,4 @@
-import { fetchContributions } from "../fetchContributions";
+import { fetchContributions } from "../api/fetchContributions";
 export const getContributionsPerPeriodPerUser = async (
   githubUser: string,
   periodOneYYYYMMDD: string,

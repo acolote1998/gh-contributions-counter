@@ -1,3 +1,3 @@
-import { printContributionsForUserList } from "./api/util/printContributionsForUserList";
+import { printContributionsForUserList } from "./util/printContributionsForUserList";
 
 printContributionsForUserList();

@@ -1,4 +1,4 @@
-import { UserType } from "../../types/types";
+import { UserType } from "../types/types";
 import { getContributionsPerPeriodPerUser } from "./getContributionsPerPeriod";
 import { users } from "./listOfUsers";
 
@@ -13,6 +13,8 @@ export const printContributionsForUserList = async () => {
 
   let totalContributionsOfAllUsers: number = 0;
 
+  console.log("--------------------------------------------");
+  console.log(`From ${fromDate} until ${untilDate}`);
   console.log("--------------------------------------------");
   console.log(" Name | Contributions | % of Contributions");
   console.log("--------------------------------------------");
@@ -40,7 +42,7 @@ export const printContributionsForUserList = async () => {
         );
       }
       console.log(
-        `${user.name}:        ${user.contributions} -            ${porcentOfContributions}%`
+        `${user.name}          ${user.contributions}                ${porcentOfContributions}%`
       );
     });
 };
