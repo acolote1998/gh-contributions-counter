@@ -13,3 +13,8 @@ type ContributionObject = {
   count: number;
   level: number;
 };
+
+export type UserType = {
+  ghId: string;
+  name: string;
+};

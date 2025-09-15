@@ -1,12 +1,18 @@
 import { getContributionsPerPeriodPerUser } from "./api/util/getContributionsPerPeriod";
+import { users } from "./api/util/listOfUsers";
 
-const test = async () => {
-  const contributions = await getContributionsPerPeriodPerUser(
+const printContributions = async () => {
+  //Uses the arguments of when we run the script. From Date, Until Date. Format is YYYY-MM-DD
+  //Example: npm start -- 2025-09-15 2025-09-15
+  const args = process.argv.slice(2);
+  const fromDate = args[0];
+  const untilDate = args[1];
+  const akiContributions: number = await getContributionsPerPeriodPerUser(
     "acolote1998",
-    "2025-09-15",
-    "2025-09-15"
+    fromDate,
+    untilDate
   );
-  console.log(contributions);
+  console.log("Aki:");
 };
 
-test();
+printContributions();
