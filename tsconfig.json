@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES2017", // Needed for async/await
+    "module": "commonjs", // Node.js module system
+    "lib": ["ES2017", "DOM"], // Include Promise, Symbol, etc.
+    "strict": true, // Optional but recommended
+    "esModuleInterop": true // Allows default import of axios
+  }
+}
