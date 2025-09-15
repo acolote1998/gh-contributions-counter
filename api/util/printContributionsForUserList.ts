@@ -13,6 +13,10 @@ export const printContributionsForUserList = async () => {
 
   let totalContributionsOfAllUsers: number = 0;
 
+  console.log("--------------------------------------------");
+  console.log(" Name | Contributions | % of Contributions");
+  console.log("--------------------------------------------");
+
   for (let i = 0; i < users.length; i++) {
     const userContributions: number = await getContributionsPerPeriodPerUser(
       users[i].ghId,
