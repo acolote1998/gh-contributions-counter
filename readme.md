@@ -1,18 +1,17 @@
-# 📊 GitHub Contributions Counter
+# 📊 GitHub Contributions Counter (Placeholder Version)
 
-A small Node/TypeScript utility that fetches contribution data for a list of GitHub users and prints their contributions within a given date range, along with their share of the total.
+A lightweight Node/TypeScript utility that simulates fetching contribution data for a list of GitHub users and prints their contributions within a given date range, along with their share of the total.
 
 ---
 
 ## 🚀 Features
 
-- Fetches contribution data using [github-contributions-api.jogruber.de](https://github-contributions-api.jogruber.de)
 - Supports **date ranges** (start + end date)
 - Prints a formatted report showing:
+  - Date range
   - User name
   - Total contributions
   - Percentage of contributions compared to the team
-- Easy to extend with more users
 
 ---
 
@@ -38,30 +37,29 @@ npm start -- 2025-09-01 2025-09-15
 
 Example output:
 
----
-
-```bash
-Name | Contributions | % of Contributions
-
-Aki:        42             20%
-David:      55             26%
-Amanda:     30             14%
+```
+--------------------------------------------
+      From 2025-09-10 until 2025-09-15
+--------------------------------------------
+ Name       | Contributions | % of Contributions
+--------------------------------------------
+Aki                12             86%
+John                2             14%
+Jack                0              0%
 ```
 
 ---
 
 ## 👥 Users
 
-The list of tracked users is defined in listOfUsers.ts:
+The list of tracked users is defined in `listOfUsers.ts`:
 
-```bash
+```ts
 export const users: UserType[] = [
-{ ghId: "david11267", name: "David" },
-{ ghId: "Helloinoit", name: "Elias" },
-{ ghId: "samuel-kar", name: "Samuel" },
+  { ghId: "user123", name: "Aki" },
+  { ghId: "user456", name: "John" },
+  { ghId: "user789", name: "Jack" },
 ];
 ```
 
-You can add or remove GitHub users here.
-
----
+You can add or remove GitHub users here to update the tracked list.
