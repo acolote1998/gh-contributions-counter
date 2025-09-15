@@ -4,6 +4,7 @@ const run = () => {
   console.log("Contributions:");
   console.log("##################");
   printContributionsForUserList();
+  console.log('test"');
 };
 
 run();
