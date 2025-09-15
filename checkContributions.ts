@@ -10,12 +10,11 @@ const printContributions = async () => {
   const untilDate = args[1];
   for (let i = 0; i < users.length; i++) {
     let name: string = users[i].name;
-    const userContributions: number | undefined =
-      await getContributionsPerPeriodPerUser(
-        users[i].ghId,
-        fromDate,
-        untilDate
-      );
+    const userContributions: number = await getContributionsPerPeriodPerUser(
+      users[i].ghId,
+      fromDate,
+      untilDate
+    );
     console.log(`${name}: ${userContributions}`);
   }
 };

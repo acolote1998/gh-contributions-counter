@@ -8,7 +8,7 @@ export const getContributionsPerPeriodPerUser = async (
   const untilDate = new Date(periodTwoYYYYMMDD);
   const allContributions = await fetchContributions(githubUser);
   if (allContributions === null) {
-    return;
+    return 0;
   }
   const filteredContributionsPerPeriod = allContributions.contributions.filter(
     (ctb) => {

@@ -3,16 +3,11 @@ import { ContributionsResponseType } from "../types/types";
 
 export const fetchContributions = async (
   githubUsername: string
-): Promise<ContributionsResponseType | null> => {
-  try {
-    const contibutions: ContributionsResponseType = (
-      await axios.get(
-        `https://github-contributions-api.jogruber.de/v4/${githubUsername}`
-      )
-    ).data;
-    return contibutions;
-  } catch (e) {
-    console.log(e);
-    return null;
-  }
+): Promise<ContributionsResponseType> => {
+  const contibutions: ContributionsResponseType = (
+    await axios.get(
+      `https://github-contributions-api.jogruber.de/v4/${githubUsername}`
+    )
+  ).data;
+  return contibutions;
 };
