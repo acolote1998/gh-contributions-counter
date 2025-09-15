@@ -8,6 +8,8 @@ export const checkIfArgumentsAreValid = () => {
   if (
     !fromDate ||
     !untilDate ||
+    isNaN(testAsValidDate.getTime()) ||
+    isNaN(testAsValidUntilDate.getTime()) ||
     testAsValidDate.getFullYear() < 2007 ||
     testAsValidUntilDate.getFullYear() < 2007 ||
     testAsValidUntilDate < testAsValidDate
