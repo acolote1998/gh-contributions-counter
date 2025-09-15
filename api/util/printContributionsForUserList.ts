@@ -14,7 +14,6 @@ export const printContributionsForUserList = async () => {
   let totalContributionsOfAllUsers: number = 0;
 
   for (let i = 0; i < users.length; i++) {
-    let name: string = users[i].name;
     const userContributions: number = await getContributionsPerPeriodPerUser(
       users[i].ghId,
       fromDate,
