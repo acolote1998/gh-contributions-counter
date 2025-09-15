@@ -20,8 +20,8 @@ A lightweight Node/TypeScript utility that simulates fetching contribution data 
 Clone the repo and install dependencies:
 
 ```bash
-git clone https://github.com/acolote1998/gh-contributions-counter.git
-cd gh-contributions-counter
+git clone https://github.com/acolote1998/gh-contributions-counter.git &&
+cd gh-contributions-counter &&
 npm install
 ```
 
