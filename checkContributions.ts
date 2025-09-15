@@ -11,7 +11,8 @@ const run = () => {
         "\n\n                 Invalid arguments                   \n\n"
       )
     );
-    console.warn("Required date format: YYYY-MM-DD \n");
+    console.warn("- Required date format: YYYY-MM-DD");
+    console.warn("- The second date cannot be before the first date\n");
     console.info(
       "Try:         " +
         chalk.bgYellow.black("   npm start -- startDate untilDate     \n")
