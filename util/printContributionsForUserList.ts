@@ -14,7 +14,7 @@ export const printContributionsForUserList = async () => {
   let totalContributionsOfAllUsers: number = 0;
 
   console.log("--------------------------------------------");
-  console.log(`From ${fromDate} until ${untilDate}`);
+  console.log(`     From ${fromDate} until ${untilDate}`);
   console.log("--------------------------------------------");
   console.log(" Name | Contributions | % of Contributions");
   console.log("--------------------------------------------");
