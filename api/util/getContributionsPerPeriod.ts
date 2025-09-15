@@ -1,11 +1,11 @@
 import { fetchContributions } from "../fetchContributions";
 export const getContributionsPerPeriodPerUser = async (
   githubUser: string,
-  periodOne: string,
-  periodTwo: string
+  periodOneYYYYMMDD: string,
+  periodTwoYYYYMMDD: string
 ) => {
-  const fromDate = new Date(periodOne);
-  const untilDate = new Date(periodTwo);
+  const fromDate = new Date(periodOneYYYYMMDD);
+  const untilDate = new Date(periodTwoYYYYMMDD);
   const allContributions = await fetchContributions(githubUser);
 
   const filteredContributionsPerPeriod = allContributions.contributions.filter(

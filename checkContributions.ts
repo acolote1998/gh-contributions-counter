@@ -1,7 +1,12 @@
-import { fetchContributions } from "./api/fetchContributions";
+import { getContributionsPerPeriodPerUser } from "./api/util/getContributionsPerPeriod";
+
 const test = async () => {
-  const contributions = await fetchContributions("acolote1998");
-  console.log(contributions.total[2025]);
+  const contributions = await getContributionsPerPeriodPerUser(
+    "acolote1998",
+    "2025-09-15",
+    "2025-09-15"
+  );
+  console.log(contributions);
 };
 
 test();
