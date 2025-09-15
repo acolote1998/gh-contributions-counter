@@ -1,3 +1,4 @@
+import { UserType } from "../../types/types";
 import { getContributionsPerPeriodPerUser } from "./getContributionsPerPeriod";
 import { users } from "./listOfUsers";
 
@@ -8,6 +9,10 @@ export const printContributionsForUserList = async () => {
   const args = process.argv.slice(2);
   const fromDate = args[0];
   const untilDate = args[1];
+  const completeUserList: UserType[] = [];
+
+  let totalContributionsOfAllUsers: number = 0;
+
   for (let i = 0; i < users.length; i++) {
     let name: string = users[i].name;
     const userContributions: number = await getContributionsPerPeriodPerUser(
@@ -15,6 +20,24 @@ export const printContributionsForUserList = async () => {
       fromDate,
       untilDate
     );
-    console.log(`${name}: ${userContributions}`);
+    completeUserList.push({
+      ghId: users[i].ghId,
+      name: users[i].name,
+      contributions: userContributions,
+    });
+    totalContributionsOfAllUsers += userContributions;
   }
+  completeUserList
+    .sort((a, b) => (b.contributions ?? 0) - (a.contributions ?? 0))
+    .forEach((user) => {
+      let porcentOfContributions = 0;
+      if (user.contributions) {
+        porcentOfContributions = Math.round(
+          (user.contributions * 100) / totalContributionsOfAllUsers
+        );
+      }
+      console.log(
+        `${user.name}:        ${user.contributions} -            ${porcentOfContributions}%`
+      );
+    });
 };

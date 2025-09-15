@@ -17,4 +17,5 @@ type ContributionObject = {
 export type UserType = {
   ghId: string;
   name: string;
+  contributions?: number;
 };
