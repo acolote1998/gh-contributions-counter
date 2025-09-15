@@ -2,6 +2,7 @@ export type ContributionsResponseType = {
   total: ContributionYears;
   contributions: ContributionObject[];
 };
+
 type ContributionYears = Record<number, number>;
 
 type ContributionObject = {
