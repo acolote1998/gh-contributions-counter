@@ -52,7 +52,7 @@ Jack                0              0%
 
 ## 👥 Users
 
-The list of tracked users is defined in `listOfUsers.ts`:
+The list of tracked users is defined in `util/listOfUsers.ts`:
 
 ```ts
 export const users: UserType[] = [
