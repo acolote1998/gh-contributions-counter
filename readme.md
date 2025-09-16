@@ -60,14 +60,14 @@ The user list has the following structure:
 ```json
 [
   {
-    ghId: "user123",
-    name: "Aki",
+    "ghId": "user123",
+    "name": "Aki"
   },
   {
-    ghId: "user456",
-    name: "John",
-  },
-];
+    "ghId": "user456",
+    "name": "John"
+  }
+]
 ```
 
 To add a new GitHub user, append a new object to the JSON array with their GitHub login ID (ghId) and the display name you want to see in the report.
