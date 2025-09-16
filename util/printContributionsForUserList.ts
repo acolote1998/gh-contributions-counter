@@ -35,17 +35,17 @@ export const printContributionsForUserList = async () => {
   completeUserList
     .sort((a, b) => (b.contributions ?? 0) - (a.contributions ?? 0))
     .forEach((user) => {
-      let porcentOfContributions = 0;
+      let percentOfContributions = 0;
       if (user.contributions) {
-        porcentOfContributions = Math.round(
+        percentOfContributions = Math.round(
           (user.contributions * 100) / totalContributionsOfAllUsers
         );
       }
 
       const nameCol = user.name.padEnd(15, " ");
       const contribCol = String(user.contributions).padStart(6, " ");
-      const porcentCol = `${porcentOfContributions}%`.padStart(6, " ");
+      const percentCol = `${percentOfContributions}%`.padStart(6, " ");
 
-      console.log(`${nameCol} | ${contribCol} | ${porcentCol}`);
+      console.log(`${nameCol} | ${contribCol} | ${percentCol}`);
     });
 };
