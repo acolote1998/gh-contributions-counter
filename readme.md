@@ -51,14 +51,32 @@ John            |             819 |             22%
 
 ## 👥 Users
 
-The list of tracked users is defined in `util/listOfUsers.ts`:
+The list of tracked users is defined in `userList.json`
 
-```ts
-export const users: UserType[] = [
-  { ghId: "user123", name: "Aki" },
-  { ghId: "user456", name: "John" },
-  { ghId: "user789", name: "Jack" },
+An example file is provided as `userList.json.example` which you can and use as a template
+
+The user list has the following structure:
+
+```json
+[
+  {
+    ghId: "user123",
+    name: "Aki",
+  },
+  {
+    ghId: "user456",
+    name: "John",
+  },
 ];
 ```
 
-You can add or remove GitHub users here to update the tracked list.
+To add a new GitHub user, append a new object to the JSON array with their GitHub login ID (ghId) and the display name you want to see in the report.
+
+For example:
+
+```json
+{
+  "ghId": "user123",
+  "name": "Aki"
+}
+```

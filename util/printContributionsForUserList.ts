@@ -1,6 +1,6 @@
 import { UserType } from "../types/types";
 import { getContributionsPerPeriodPerUser } from "./getContributionsPerPeriod";
-import { users } from "./listOfUsers";
+import userList from "../userList.json";
 
 export const printContributionsForUserList = async () => {
   // Reads command-line arguments: start date and end date (format: YYYY-MM-DD)
@@ -22,15 +22,15 @@ export const printContributionsForUserList = async () => {
   console.log(`${nameTitleCol} | ${contribTitleCol} | ${percentTitleCol}`);
   console.log("-----------------------------------------------------");
 
-  for (let i = 0; i < users.length; i++) {
+  for (let i = 0; i < userList.length; i++) {
     const userContributions: number = await getContributionsPerPeriodPerUser(
-      users[i].ghId,
+      userList[i].ghId,
       fromDate,
       untilDate
     );
     completeUserList.push({
-      ghId: users[i].ghId,
-      name: users[i].name,
+      ghId: userList[i].ghId,
+      name: userList[i].name,
       contributions: userContributions,
     });
     totalContributionsOfAllUsers += userContributions;

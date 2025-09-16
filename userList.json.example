@@ -1,0 +1,10 @@
+[
+  {
+    "ghId": "Example GH ID",
+    "name": "Example of name to be printed"
+  },
+  {
+    "ghId": "GitHub1234",
+    "name": "John"
+  }
+]
