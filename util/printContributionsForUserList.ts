@@ -13,11 +13,14 @@ export const printContributionsForUserList = async () => {
 
   let totalContributionsOfAllUsers: number = 0;
 
-  console.log("--------------------------------------------");
+  console.log("-----------------------------------------------------");
   console.log(`     From ${fromDate} until ${untilDate}`);
-  console.log("--------------------------------------------");
-  console.log(" Name | Contributions | % of Contributions");
-  console.log("--------------------------------------------");
+  console.log("-----------------------------------------------------");
+  const nameTitleCol = "       Name".padEnd(15, " ");
+  const contribTitleCol = "Contributions".padStart(15, " ");
+  const percentTitleCol = "% of Contributions".padStart(15, " ");
+  console.log(`${nameTitleCol} | ${contribTitleCol} | ${percentTitleCol}`);
+  console.log("-----------------------------------------------------");
 
   for (let i = 0; i < users.length; i++) {
     const userContributions: number = await getContributionsPerPeriodPerUser(
@@ -43,8 +46,8 @@ export const printContributionsForUserList = async () => {
       }
 
       const nameCol = user.name.padEnd(15, " ");
-      const contribCol = String(user.contributions).padStart(6, " ");
-      const percentCol = `${percentOfContributions}%`.padStart(6, " ");
+      const contribCol = String(user.contributions).padStart(15, " ");
+      const percentCol = `${percentOfContributions}%`.padStart(15, " ");
 
       console.log(`${nameCol} | ${contribCol} | ${percentCol}`);
     });
