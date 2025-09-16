@@ -41,8 +41,11 @@ export const printContributionsForUserList = async () => {
           (user.contributions * 100) / totalContributionsOfAllUsers
         );
       }
-      console.log(
-        `${user.name}          ${user.contributions}                ${porcentOfContributions}%`
-      );
+
+      const nameCol = user.name.padEnd(15, " ");
+      const contribCol = String(user.contributions).padStart(6, " ");
+      const porcentCol = `${porcentOfContributions}%`.padStart(6, " ");
+
+      console.log(`${nameCol} | ${contribCol} | ${porcentCol}`);
     });
 };
